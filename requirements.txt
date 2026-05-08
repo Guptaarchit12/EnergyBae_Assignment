@@ -1,0 +1,22 @@
+# Energybae Solar Load Calculator — Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# ── Core AI ────────────────────────────────────────────────────────────────────
+google-genai>=1.0.0            # Gemini API — bill data extraction
+
+# ── Excel Handling ────────────────────────────────────────────────────────────
+openpyxl>=3.1.2                # Read/write/format .xlsx files
+
+# ── Web App (Bonus UI) ────────────────────────────────────────────────────────
+streamlit>=1.32.0              # Streamlit web interface
+
+# ── PDF Generation (sample bill creation) ────────────────────────────────────
+reportlab>=4.1.0               # Generate sample MSEDCL bill PDFs for testing
+
+# ── Optional: OCR fallback for scanned image bills ────────────────────────────
+# pillow>=10.0.0               # Image handling (Claude vision handles most cases)
+# pytesseract>=0.3.10          # Tesseract OCR fallback (requires tesseract-ocr installed)
+# pdf2image>=1.16.3            # Convert PDF pages to images for OCR
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0           # Load .env file for API key management
