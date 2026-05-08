@@ -115,15 +115,10 @@ with st.expander("ℹ️ How it works", expanded=False):
 
 st.divider()
 
-# ── API Key input ─────────────────────────────────────────────────────────────
-api_key = os.environ.get("GOOGLE_API_KEY", "")
-if not api_key:
-    api_key = st.text_input(
-        "🔑 Google AI API Key",
-        type="password",
-        placeholder="AIza...",
-        help="Get your free key at aistudio.google.com. It stays in your session only."
-    )
+# ── API Key Configuration ─────────────────────────────────────────────────────
+# Replace 'YOUR_API_KEY_HERE' with your actual new API key.
+# WARNING: Hardcoding API keys and pushing to GitHub is a major security risk.
+api_key = "AIzaSyAksT9jd6JyjGhLy4fSCLYTcBFmuCccXI0"
 
 # ── File uploader ─────────────────────────────────────────────────────────────
 st.markdown("### 📄 Upload Electricity Bill")
