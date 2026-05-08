@@ -8,6 +8,9 @@ import sys
 import json
 import tempfile
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 import streamlit as st
 
@@ -116,9 +119,11 @@ with st.expander("ℹ️ How it works", expanded=False):
 st.divider()
 
 # ── API Key Configuration ─────────────────────────────────────────────────────
-# Replace 'YOUR_API_KEY_HERE' with your actual new API key.
-# WARNING: Hardcoding API keys and pushing to GitHub is a major security risk.
-api_key = "AIzaSyAksT9jd6JyjGhLy4fSCLYTcBFmuCccXI0"
+# The API key is securely loaded from the .env file using dotenv
+api_key = os.environ.get("GOOGLE_API_KEY", "")
+if not api_key:
+    st.error("⚠️ GOOGLE_API_KEY not found. Please add it to your .env file.")
+    st.stop()
 
 # ── File uploader ─────────────────────────────────────────────────────────────
 st.markdown("### 📄 Upload Electricity Bill")
